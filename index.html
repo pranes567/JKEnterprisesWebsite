@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Home - JK Enterprises</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- use a locally-built Tailwind CSS in production -->
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* enable smooth single-page scrolling */
+    html { scroll-behavior: smooth; }
+    /* offset anchors so fixed header doesn't cover section titles */
+    #home, #about, #products, #industries, #contact { scroll-margin-top: 6rem; }
+  </style>
+  <!-- favicon -->
+  <link rel="icon" href="assets/images/jk-logo.png" type="image/png">
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<!-- ===== NAVBAR (single-page anchors) ===== -->
+<header class="fixed top-0 w-full z-50 bg-gradient-to-b from-[#0b2446]/75 to-transparent border-b border-white/10 backdrop-blur-sm">
+  <div class="w-full flex items-center justify-between h-24 px-4 md:px-6">
+    
+    <!-- Logo + Company Name (left aligned) -->
+    <div class="flex items-center gap-4">
+      <a href="#home" class="flex items-center gap-4">
+        <img src="assets/images/jk-logo.png" alt="JK Enterprises Logo" class="h-20 md:h-24 w-auto object-contain block" />
+        <div>
+          <span class="text-2xl md:text-3xl font-semibold text-white tracking-wide">JK ENTERPRISES</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Desktop Navigation (anchor links) -->
+    <nav class="hidden md:flex items-center space-x-6 font-medium">
+      <a href="#home" class="text-white hover:text-yellow-400 transition">Home</a>
+      <a href="#about" class="text-white hover:text-yellow-400 transition">About</a>
+      <a href="#products" class="text-white hover:text-yellow-400 transition">Products</a>
+      <a href="#industries" class="text-white hover:text-yellow-400 transition">Industries</a>
+      <a href="#contact" class="text-white hover:text-yellow-400 transition">Contact</a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden">
+      <button id="mobile-nav-button" class="p-2 rounded bg-white/10 text-white text-xl">☰</button>
+    </div>
+  </div>
+
+  <!-- Mobile Nav -->
+  <div id="mobile-nav" class="md:hidden hidden bg-[#071430]/95 text-white border-t border-white/10">
+    <div class="p-4 flex flex-col space-y-2">
+      <a href="#home" class="hover:text-yellow-400">Home</a>
+      <a href="#about" class="hover:text-yellow-400">About</a>
+      <a href="#products" class="hover:text-yellow-400">Products</a>
+      <a href="#industries" class="hover:text-yellow-400">Industries</a>
+      <a href="#contact" class="hover:text-yellow-400">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main class="pt-24">
+
+<!-- HERO -->
+<section id="home" class="relative hero h-[90vh] flex items-center justify-center text-center text-white overflow-hidden">
+
+  <!-- Background image -->
+  <div 
+    class="absolute inset-0 bg-cover bg-center bg-fixed"
+    style="background-image: url('assets/images/hero-generator3.png'); filter: brightness(1.05) contrast(1.15) saturate(1.15);">
+  </div>
+
+  <!-- Metallic blue gradient overlay -->
+  <div class="absolute inset-0 bg-gradient-to-br from-[#0f172a]/85 via-[#1e3a8a]/75 to-[#172554]/85"></div>
+
+  <!-- Subtle top shine -->
+  <div class="absolute inset-x-0 top-0 h-[180px] bg-gradient-to-b from-white/10 to-transparent"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 px-6">
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg leading-tight">
+      <span class="text-yellow-400">Reliable</span> Power Solutions<br>
+      for Every Industry ⚙️
+    </h1>
+    <p class="max-w-2xl mx-auto text-lg md:text-xl mb-8 text-blue-100 drop-shadow-md">
+      Multi-brand generator supplier serving Tamil Nadu, Kerala & Karnataka — reliable energy solutions.
+    </p>
+    <div class="flex justify-center gap-4 flex-wrap">
+      <a href="#products" 
+         class="bg-yellow-400 text-blue-900 font-semibold px-8 py-3 rounded-full shadow hover:bg-yellow-300 transition">
+         View Products
+      </a>
+      <a href="#contact" 
+         class="border border-white text-white font-semibold px-8 py-3 rounded-full hover:bg-white hover:text-blue-900 transition">
+         Contact Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="container py-16">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-semibold text-blue-700 mb-4">About JK Enterprises</h2>
+    <p class="text-gray-700 leading-relaxed">
+      JK Enterprises is an authorized multi-brand generator supplier and service provider across Tamil Nadu, Kerala and Karnataka.
+      We deliver, install and maintain power systems for residential, commercial and industrial customers with experienced technical teams and fast support.
+    </p>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="bg-white py-12">
+  <div class="container">
+    <h2 class="text-3xl font-semibold text-center text-blue-700 mb-8">Our Products</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl p-6 text-center card-hover shadow">
+        <img src="assets/images/ashokleyland.png" alt="Ashok Leyland" class="h-16 mx-auto mb-4">
+        <h3 class="font-semibold mb-1">Ashok Leyland Gensets</h3>
+        <p class="text-sm text-gray-600">Industrial-grade gensets</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 text-center card-hover shadow">
+        <img src="assets/images/eicher.png" alt="Eicher" class="h-16 mx-auto mb-4">
+        <h3 class="font-semibold mb-1">Eicher / Volvo Eicher</h3>
+        <p class="text-sm text-gray-600">Efficient & reliable</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 text-center card-hover shadow">
+        <img src="assets/images/mahindra.png" alt="Mahindra" class="h-16 mx-auto mb-4">
+        <h3 class="font-semibold mb-1">Mahindra / Sterling</h3>
+        <p class="text-sm text-gray-600">Premium solutions</p>
+      </div>
+      <!-- add additional product placeholders as needed -->
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section id="brands" class="py-12 bg-blue-50">
+  <div class="container">
+    <h2 class="text-3xl font-semibold text-center text-blue-700 mb-8">Our Brands & Brochures</h2>
+    <p class="text-center text-gray-600 mb-6">Click a brand to view its brochure.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <button class="bg-white rounded-xl p-6 flex flex-col items-center shadow brand-card" data-brochure="assets/downloads/JK ENTERPRISES.pdf">
+        <img src="assets/images/ashokleyland.png" alt="Ashok Leyland" class="h-20 mb-4">
+        <h4 class="font-semibold">Ashok Leyland</h4>
+        <p class="text-sm text-gray-500 mt-2">Industrial genset solutions.</p>
+      </button>
+
+      <button class="bg-white rounded-xl p-6 flex flex-col items-center shadow brand-card" data-brochure="assets/downloads/JK ENTERPRISES.pdf">
+        <img src="assets/images/eicher.png" alt="Eicher" class="h-20 mb-4">
+        <h4 class="font-semibold">Eicher</h4>
+        <p class="text-sm text-gray-500 mt-2">Efficient power systems.</p>
+      </button>
+
+      <button class="bg-white rounded-xl p-6 flex flex-col items-center shadow brand-card" data-brochure="assets/downloads/JK ENTERPRISES.pdf">
+        <img src="assets/images/mahindra.png" alt="Mahindra" class="h-20 mb-4">
+        <h4 class="font-semibold">Mahindra</h4>
+        <p class="text-sm text-gray-500 mt-2">Premium genset range.</p>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industries" class="py-12">
+  <div class="container">
+    <h2 class="text-3xl font-semibold text-center text-blue-700 mb-8">Industries We Serve</h2>
+    <p class="text-center text-gray-600 mb-6">Power solutions for a wide range of installations — residential to heavy industry.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
+      <!-- Ensure these image files exist in assets/images. Replaced with actual filenames found in the folder -->
+      <div class="bg-white rounded-xl overflow-hidden shadow">
+        <img src="assets/images/Apartments.jpeg" alt="Apartment" class="w-full h-44 md:h-56 object-cover">
+        <div class="p-4 text-center">
+          <h4 class="font-semibold">Apartment</h4>
+          <p class="text-sm text-gray-500 mt-2">Backup power for multi-storey residential buildings and gated communities.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl overflow-hidden shadow">
+        <img src="assets/images/Hotel.jpeg" alt="Hotel" class="w-full h-44 md:h-56 object-cover">
+        <div class="p-4 text-center">
+          <h4 class="font-semibold">Hotel</h4>
+          <p class="text-sm text-gray-500 mt-2">Power systems for guest rooms, kitchens and common areas with silent-operation options.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl overflow-hidden shadow">
+        <img src="assets/images/Resort.jpeg" alt="Resort" class="w-full h-44 md:h-56 object-cover">
+        <div class="p-4 text-center">
+          <h4 class="font-semibold">Resort</h4>
+          <p class="text-sm text-gray-500 mt-2">Vacation properties and leisure installations.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl overflow-hidden shadow">
+        <img src="assets/images/Industrial Unit.jpeg" alt="Industrial Unit" class="w-full h-44 md:h-56 object-cover">
+        <div class="p-4 text-center">
+          <h4 class="font-semibold">Industrial Unit</h4>
+          <p class="text-sm text-gray-500 mt-2">Heavy-duty gensets for factories and workshops.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl overflow-hidden shadow">
+        <img src="assets/images/Hospital.jpeg" alt="Hospital" class="w-full h-44 md:h-56 object-cover">
+        <div class="p-4 text-center">
+          <h4 class="font-semibold">Hospital</h4>
+          <p class="text-sm text-gray-500 mt-2">Reliable backup power for critical healthcare facilities.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl overflow-hidden shadow">
+        <img src="assets/images/Manufacturing Plant.jpeg" alt="Manufacturing Unit" class="w-full h-44 md:h-56 object-cover">
+        <div class="p-4 text-center">
+          <h4 class="font-semibold">Manufacturing Unit</h4>
+          <p class="text-sm text-gray-500 mt-2">Production-line solutions and redundancy systems.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl overflow-hidden shadow">
+        <img src="assets/images/Restaurant.jpeg" alt="Restaurant" class="w-full h-44 md:h-56 object-cover">
+        <div class="p-4 text-center">
+          <h4 class="font-semibold">Restaurant</h4>
+          <p class="text-sm text-gray-500 mt-2">Commercial kitchens and hospitality back-of-house power.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl overflow-hidden shadow">
+        <img src="assets/images/PetrolBunk.jpeg" alt="Petrol Bunk" class="w-full h-44 md:h-56 object-cover">
+        <div class="p-4 text-center">
+          <h4 class="font-semibold">Petrol Bunk</h4>
+          <p class="text-sm text-gray-500 mt-2">Safe, consistent power for fuel stations and forecourts.</p>
+        </div>
+      </div>
+    </div>    
+  </div>
+</section>
+
+<!-- INSTALLATION (kept in-page) -->
+<section class="bg-white py-12">
+  <div class="container grid md:grid-cols-3 gap-6 items-center">
+    <div>
+      <h3 class="text-2xl font-semibold mb-2">Why Choose JK Enterprises?</h3>
+      <ul class="list-disc list-inside text-gray-700">
+        <li>Authorized multi-brand supplier</li>
+        <li>State-wide delivery & support</li>
+        <li>Experienced technical team</li>
+      </ul>
+    </div>
+    <div class="md:col-span-2">
+      <div class="w-full h-64 md:h-80 overflow-hidden rounded-lg shadow">
+        <img src="assets/images/Installation.jpeg" alt="Installation" class="w-full h-full object-cover block">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-12 bg-blue-50">
+  <div class="container grid md:grid-cols-2 gap-8 items-center">
+    <div>
+      <h2 class="text-3xl font-semibold text-blue-700 mb-4">Contact Us</h2>
+      <p class="text-gray-700 mb-4">Reach out for quotes, installations and service support.</p>
+
+      <div class="bg-white p-6 rounded-lg shadow">
+        <p class="font-semibold">Office</p>
+        <p class="text-gray-700 mt-2"><strong>GSTIN:</strong> 33AYOPJ0476F1ZG</p>
+        <p class="text-gray-700 mt-2"><strong>Address:</strong><br>14/2/1, Nagaractchi Nagar, Solar Pudur, Karur Main Road, Erode - 638 002.</p>
+
+        <!-- Prominent phone & email so they're easy to tap on mobile -->
+        <div class="mt-4">
+          <a href="tel:+918344776630" class="inline-block text-blue-800 font-semibold text-lg md:text-xl">+91 83447 76630</a>
+          <div class="text-sm text-gray-600">Call us for quotes & service</div>
+        </div>
+
+        <div class="mt-3">
+          <a href="mailto:jkenterpriseerode@gmail.com" class="inline-block text-blue-800 font-medium">jkenterpriseerode@gmail.com</a>
+          <div class="text-sm text-gray-600">Email for documentation & enquiries</div>
+        </div>
+      </div>
+
+      <!-- Action buttons (compact, nowrap) -->
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="tel:+918344776630" class="inline-flex items-center gap-2 bg-white border rounded px-3 py-2 shadow whitespace-nowrap">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h2l.4 2M7 7h10l1 5H6l1-5z"/></svg>
+          Call
+        </a>
+
+        <a href="mailto:jkenterpriseerode@gmail.com" class="inline-flex items-center gap-2 bg-white border rounded px-3 py-2 shadow whitespace-nowrap">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          Email
+        </a>
+
+        <a href="https://wa.me/918344776630" target="_blank" class="inline-flex items-center gap-2 bg-green-500 text-white rounded px-3 py-2 shadow whitespace-nowrap">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.9 11.9 0 0012.06.5C6.06.5 1.01 5.55 1.01 11.55c0 2.03.56 4.02 1.62 5.77L.03 23.5l6.47-1.7a11.45 11.45 0 005.56 1.44h.02c6 0 10.05-5.05 10.05-11.05 0-2.96-1.15-5.73-3.61-7.71zM12.06 20.5h-.01"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="font-semibold mb-3">Location / Google Map</h3>
+      <div class="bg-white rounded-lg overflow-hidden shadow">
+        <!-- Replace the iframe src with your Google Maps embed URL. -->
+        <div class="w-full h-64">
+          <iframe
+            id="google-map-frame"
+            class="w-full h-full border-0"
+            src="https://www.google.com/maps?q=11.31631,77.7573468&z=17&hl=en&output=embed"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+
+      <p class="text-sm text-gray-500 mt-2">Map shows our office location — click the map to open in Google Maps.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-gray-800 text-white mt-12">
+  <div class="container py-8 text-center">
+    <p class="mb-2">© 2025 JK Enterprises — All rights reserved.</p>
+    <p class="footer-credit">Website design & code © 2025 Ruthvikashree Solutions</p>
+  </div>
+</footer>
+
+
+
+<!-- Brochure modal (hidden by default) -->
+<div id="brochure-modal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
+  <div class="bg-white w-[90%] md:w-3/4 h-[80%] rounded-lg overflow-hidden shadow-lg flex flex-col">
+    <div class="flex items-center justify-between p-3 border-b">
+      <h3 id="brochure-title" class="font-semibold">Brochure</h3>
+      <button id="brochure-close" class="text-gray-600 hover:text-gray-900">✕</button>
+    </div>
+    <div class="flex-1">
+      <iframe id="brochure-frame" class="w-full h-full" src="" frameborder="0"></iframe>
+    </div>
+    <div class="p-3 border-t text-right">
+      <a id="brochure-download" class="inline-block bg-blue-700 text-white px-4 py-2 rounded" href="#" download>Download Brochure</a>
+    </div>
+  </div>
+</div>
+
+  <!-- Floating WhatsApp contact (desktop: large bar, mobile: small circle) -->
+  <!-- Desktop large bar (hidden on small screens) -->
+  <a href="https://wa.me/918344776630" target="_blank" aria-label="Chat on WhatsApp"
+     class="hidden md:flex fixed right-4 bottom-20 z-50 items-center gap-3 bg-green-600 text-white px-4 py-3 rounded-full shadow-lg">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.9 11.9 0 0012.06.5C6.06.5 1.01 5.55 1.01 11.55c0 2.03.56 4.02 1.62 5.77L.03 23.5l6.47-1.7a11.45 11.45 0 005.56 1.44h.02c6 0 10.05-5.05 10.05-11.05 0-2.96-1.15-5.73-3.61-7.71zM12.06 20.5h-.01"/></svg>
+    <div class="text-left">
+      <div class="text-sm font-semibold">Chat on WhatsApp</div>
+      <div class="text-xs">+91 83447 76630</div>
+    </div>
+  </a>
+
+  <!-- Mobile small circular icon (visible only on small screens) -->
+  <!-- <a href="https://wa.me/918344776630" target="_blank" aria-label="Chat on WhatsApp"
+     class="md:hidden fixed right-4 bottom-6 z-50 flex items-center justify-center w-14 h-14 bg-green-600 text-white rounded-full shadow-lg">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.9 11.9 0 0012.06.5C6.06.5 1.01 5.55 1.01 11.55c0 2.03.56 4.02 1.62 5.77L.03 23.5l6.47-1.7a11.45 11.45 0 005.56 1.44h.02c6 0 10.05-5.05 10.05-11.05 0-2.96-1.15-5.73-3.61-7.71zM12.06 20.5h-.01"/></svg>
+  </a> -->
+
+<script>
+  // simple mobile nav toggle (keeps existing main.js behavior if present)
+  document.getElementById('mobile-nav-button')?.addEventListener('click', function () {
+    document.getElementById('mobile-nav').classList.toggle('hidden');
+  });
+
+  // Brand brochure modal handling
+  const brandCards = document.querySelectorAll('.brand-card');
+  const modal = document.getElementById('brochure-modal');
+  const frame = document.getElementById('brochure-frame');
+  const title = document.getElementById('brochure-title');
+  const download = document.getElementById('brochure-download');
+  const closeBtn = document.getElementById('brochure-close');
+
+  brandCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const brochure = card.getAttribute('data-brochure') || 'assets/downloads/JK ENTERPRISES.pdf';
+      const brandName = card.querySelector('h4')?.innerText || 'Brochure';
+      // set iframe src and show modal
+      frame.src = brochure;
+      download.href = brochure;
+      title.innerText = brandName + ' — Brochure';
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    });
+  });
+
+  function closeModal() {
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
+    frame.src = '';
+  }
+
+  closeBtn?.addEventListener('click', closeModal);
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+</script>
+
+</body>
+</html>
