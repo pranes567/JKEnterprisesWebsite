@@ -13,14 +13,54 @@
     html { scroll-behavior: smooth; }
     /* offset anchors so fixed header doesn't cover section titles */
     #home, #about, #products, #industries, #contact { scroll-margin-top: 6rem; }
+
+    /* Brand card hover overlay + cursor */
+    .brand-card { position: relative; overflow: hidden; cursor: pointer; }
+    .brand-card img { transition: transform .25s ease; }
+    .brand-card:hover img { transform: scale(1.05); }
+    .brand-card .overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.45);
+      color: #fff;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity .18s ease;
+      pointer-events: none;
+    }
+    .brand-card:hover .overlay { opacity: 1; pointer-events: auto; }
+    /* header transition and scrolled state */
+    header.transition-header { transition: background-color .25s ease, box-shadow .25s ease, border-color .25s ease, backdrop-filter .25s ease; }
+    header.scrolled { background-color: #EAE8E4 !important; box-shadow: 0 6px 20px rgba(15,23,42,0.08); border-bottom-color: rgba(0,0,0,0.06) !important; backdrop-filter: none !important; }
   </style>
+
+  <style>
+/* Ensure hero overlay stays behind content and floating button */
+.hero > div {
+  z-index: 1 !important;
+}
+
+/* WhatsApp floating button at top-most layer */
+#whatsapp-float {
+  position: fixed !important;
+  z-index: 999999 !important;
+}
+
+/* Prevent any parent from hiding floating items */
+body, html {
+  overflow-x: hidden;
+}
+</style>
   <!-- favicon -->
   <link rel="icon" href="assets/images/jk-logo.png" type="image/png">
 </head>
 <body class="bg-gray-50 text-gray-900">
 
 <!-- ===== NAVBAR (single-page anchors) ===== -->
-<header class="fixed top-0 w-full z-50 bg-gradient-to-b from-[#0b2446]/75 to-transparent border-b border-white/10 backdrop-blur-sm">
+<header class="fixed top-0 w-full z-50 bg-gradient-to-b from-[#0b2446]/75 to-transparent border-b border-white/10 backdrop-blur-sm transition-header">
   <div class="w-full flex items-center justify-between h-24 px-4 md:px-6">
     
     <!-- Logo + Company Name (left aligned) -->
@@ -28,33 +68,33 @@
       <a href="#home" class="flex items-center gap-4">
         <img src="assets/images/jk-logo.png" alt="JK Enterprises Logo" class="h-20 md:h-24 w-auto object-contain block" />
         <div>
-          <span class="text-2xl md:text-3xl font-semibold text-white tracking-wide">JK ENTERPRISES</span>
+          <span class="text-2xl md:text-3xl font-semibold text-black tracking-wide">JK ENTERPRISES</span>
         </div>
       </a>
     </div>
 
     <!-- Desktop Navigation (anchor links) -->
     <nav class="hidden md:flex items-center space-x-6 font-medium">
-      <a href="#home" class="text-white hover:text-yellow-400 transition">Home</a>
-      <a href="#about" class="text-white hover:text-yellow-400 transition">About</a>
-      <a href="#products" class="text-white hover:text-yellow-400 transition">Products</a>
-      <a href="#industries" class="text-white hover:text-yellow-400 transition">Industries</a>
-      <a href="#contact" class="text-white hover:text-yellow-400 transition">Contact</a>
+  <a href="#home" class="text-black hover:text-yellow-600 transition">Home</a>
+  <a href="#about" class="text-black hover:text-yellow-600 transition">About</a>
+  <a href="#products" class="text-black hover:text-yellow-600 transition">Products</a>
+  <a href="#industries" class="text-black hover:text-yellow-600 transition">Categories</a>
+  <a href="#contact" class="text-black hover:text-yellow-600 transition">Contact</a>
     </nav>
 
     <!-- Mobile Menu Button -->
     <div class="md:hidden">
-      <button id="mobile-nav-button" class="p-2 rounded bg-white/10 text-white text-xl">☰</button>
+      <button id="mobile-nav-button" class="p-2 rounded bg-transparent text-black text-xl">☰</button>
     </div>
   </div>
 
   <!-- Mobile Nav -->
-  <div id="mobile-nav" class="md:hidden hidden bg-[#071430]/95 text-white border-t border-white/10">
+  <div id="mobile-nav" class="md:hidden hidden bg-[#E6E9EE] text-black border-t border-gray-300">
     <div class="p-4 flex flex-col space-y-2">
       <a href="#home" class="hover:text-yellow-400">Home</a>
       <a href="#about" class="hover:text-yellow-400">About</a>
       <a href="#products" class="hover:text-yellow-400">Products</a>
-      <a href="#industries" class="hover:text-yellow-400">Industries</a>
+  <a href="#industries" class="hover:text-yellow-400">Categories</a>
       <a href="#contact" class="hover:text-yellow-400">Contact</a>
     </div>
   </div>
@@ -63,19 +103,13 @@
 <main class="pt-24">
 
 <!-- HERO -->
-<section id="home" class="relative hero h-[90vh] flex items-center justify-center text-center text-white overflow-hidden">
+<section id="home" class="relative hero h-[90vh] flex items-center justify-center text-center text-white overflow-visible" style="background-color:#050507;">
 
-  <!-- Background image -->
-  <div 
-    class="absolute inset-0 bg-cover bg-center bg-fixed"
-    style="background-image: url('assets/images/hero-generator3.png'); filter: brightness(1.05) contrast(1.15) saturate(1.15);">
-  </div>
+  <!-- Background image removed intentionally; keep a solid dark gradient so text remains visible -->
+  <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(11,11,11,0.85) 50%, rgba(17,24,39,0.95) 100%);"></div>
 
-  <!-- Metallic blue gradient overlay -->
-  <div class="absolute inset-0 bg-gradient-to-br from-[#0f172a]/85 via-[#1e3a8a]/75 to-[#172554]/85"></div>
-
-  <!-- Subtle top shine -->
-  <div class="absolute inset-x-0 top-0 h-[180px] bg-gradient-to-b from-white/10 to-transparent"></div>
+  <!-- Subtle top shine (kept low-opacity so it doesn't wash out text) -->
+  <div class="absolute inset-x-0 top-0 h-[180px] bg-gradient-to-b from-white/6 to-transparent"></div>
 
   <!-- Content -->
   <div class="relative z-10 px-6">
@@ -84,15 +118,15 @@
       for Every Industry ⚙️
     </h1>
     <p class="max-w-2xl mx-auto text-lg md:text-xl mb-8 text-blue-100 drop-shadow-md">
-      Multi-brand generator supplier serving Tamil Nadu, Kerala & Karnataka — reliable energy solutions.
+      Multi-brand generator supplier serving Tamil Nadu, Kerala & Karnataka  reliable energy solutions.
     </p>
-    <div class="flex justify-center gap-4 flex-wrap">
+   <div class="flex justify-center gap-4 flex-wrap">
       <a href="#products" 
-         class="bg-yellow-400 text-blue-900 font-semibold px-8 py-3 rounded-full shadow hover:bg-yellow-300 transition">
+      class="bg-yellow-400 text-blue-900 font-semibold px-8 py-3 rounded-full shadow hover:bg-yellow-300 transition">
          View Products
       </a>
       <a href="#contact" 
-         class="border border-white text-white font-semibold px-8 py-3 rounded-full hover:bg-white hover:text-blue-900 transition">
+      class="border border-white text-white font-semibold px-8 py-3 rounded-full hover:bg-white hover:text-blue-900 transition">
          Contact Us
       </a>
     </div>
@@ -105,68 +139,69 @@
     <h2 class="text-3xl font-semibold text-blue-700 mb-4">About JK Enterprises</h2>
     <p class="text-gray-700 leading-relaxed">
       JK Enterprises is an authorized multi-brand generator supplier and service provider across Tamil Nadu, Kerala and Karnataka.
-      We deliver, install and maintain power systems for residential, commercial and industrial customers with experienced technical teams and fast support.
+  We deliver, install and maintain power systems for residential, commercial and industrial customers through strong supplier partnerships and reliable after-sales support.
     </p>
   </div>
 </section>
 
-<!-- PRODUCTS -->
+<!-- MERGED: OUR SUPPLY BRANDS (replaces previous Products & Brands sections) -->
 <section id="products" class="bg-white py-12">
   <div class="container">
-    <h2 class="text-3xl font-semibold text-center text-blue-700 mb-8">Our Products</h2>
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-xl p-6 text-center card-hover shadow">
-        <img src="assets/images/ashokleyland.png" alt="Ashok Leyland" class="h-16 mx-auto mb-4">
-        <h3 class="font-semibold mb-1">Ashok Leyland Gensets</h3>
-        <p class="text-sm text-gray-600">Industrial-grade gensets</p>
-      </div>
-      <div class="bg-white rounded-xl p-6 text-center card-hover shadow">
-        <img src="assets/images/eicher.png" alt="Eicher" class="h-16 mx-auto mb-4">
-        <h3 class="font-semibold mb-1">Eicher / Volvo Eicher</h3>
-        <p class="text-sm text-gray-600">Efficient & reliable</p>
-      </div>
-      <div class="bg-white rounded-xl p-6 text-center card-hover shadow">
-        <img src="assets/images/mahindra.png" alt="Mahindra" class="h-16 mx-auto mb-4">
-        <h3 class="font-semibold mb-1">Mahindra / Sterling</h3>
-        <p class="text-sm text-gray-600">Premium solutions</p>
-      </div>
-      <!-- add additional product placeholders as needed -->
-    </div>
-  </div>
-</section>
+    <h2 class="text-3xl font-semibold text-center text-blue-700 mb-4">Our Supply Brands</h2>
+    <p class="text-center text-gray-600 mb-8">Click a brand to open or download its brochure.</p>
 
-<!-- BRANDS -->
-<section id="brands" class="py-12 bg-blue-50">
-  <div class="container">
-    <h2 class="text-3xl font-semibold text-center text-blue-700 mb-8">Our Brands & Brochures</h2>
-    <p class="text-center text-gray-600 mb-6">Click a brand to view its brochure.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Genlite -->
+      <div class="brand-card bg-white rounded-xl p-6 flex flex-col items-center shadow" data-brochure="assets/downloads/genlite 15kVA-to-250kVA brochure.pdf">
+        <img src="assets/images/ashokleyland.png" alt="Genlite" class="h-20 mb-4">
+        <h4 class="font-semibold">Genlite</h4>
+        <p class="text-sm text-gray-500 mt-2">Genlite Leypower — Diesel Generators (15 kVA to 250 kVA).</p>
+        <div class="overlay">Open Brochure</div>
+      </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-      <button class="bg-white rounded-xl p-6 flex flex-col items-center shadow brand-card" data-brochure="assets/downloads/JK ENTERPRISES.pdf">
-        <img src="assets/images/ashokleyland.png" alt="Ashok Leyland" class="h-20 mb-4">
-        <h4 class="font-semibold">Ashok Leyland</h4>
-        <p class="text-sm text-gray-500 mt-2">Industrial genset solutions.</p>
-      </button>
-
-      <button class="bg-white rounded-xl p-6 flex flex-col items-center shadow brand-card" data-brochure="assets/downloads/JK ENTERPRISES.pdf">
-        <img src="assets/images/eicher.png" alt="Eicher" class="h-20 mb-4">
-        <h4 class="font-semibold">Eicher</h4>
+      <!-- Volvo Eicher (image should be named volvoeicher.png in assets/images) -->
+      <div class="brand-card bg-white rounded-xl p-6 flex flex-col items-center shadow" data-brochure="assets/downloads/JK ENTERPRISES.pdf">
+        <img src="assets/images/volvoeicher.png" alt="Volvo Eicher" class="h-20 mb-4">
+        <h4 class="font-semibold">Volvo Eicher</h4>
         <p class="text-sm text-gray-500 mt-2">Efficient power systems.</p>
-      </button>
+        <div class="overlay">Open Brochure</div>
+      </div>
 
-      <button class="bg-white rounded-xl p-6 flex flex-col items-center shadow brand-card" data-brochure="assets/downloads/JK ENTERPRISES.pdf">
+      <!-- Eicher TMTL -->
+      <div class="brand-card bg-white rounded-xl p-6 flex flex-col items-center shadow" data-brochure="assets/downloads/EICHER TMTL 5 - 125 kVA Brochure.pdf">
+        <img src="assets/images/Etmtl.png" alt="Eicher TMTL" class="h-20 mb-4">
+        <h4 class="font-semibold">Eicher TMTL</h4>
+        <p class="text-sm text-gray-500 mt-2">Eicher TMTL — 5 kVA to 125 kVA</p>
+        <div class="overlay">Open Brochure</div>
+      </div>
+
+      <!-- Mahindra -->
+      <div class="brand-card bg-white rounded-xl p-6 flex flex-col items-center shadow" data-brochure="assets/downloads/JK ENTERPRISES.pdf">
         <img src="assets/images/mahindra.png" alt="Mahindra" class="h-20 mb-4">
         <h4 class="font-semibold">Mahindra</h4>
         <p class="text-sm text-gray-500 mt-2">Premium genset range.</p>
-      </button>
+        <div class="overlay">Open Brochure</div>
+      </div>
+
+      <!-- Sterling (new) -->
+      <div class="brand-card bg-white rounded-xl p-6 flex flex-col items-center shadow" data-brochure="assets/downloads/JK ENTERPRISES.pdf">
+        <img src="assets/images/Sterling.png" alt="Sterling" class="h-20 mb-4">
+        <h4 class="font-semibold">Sterling</h4>
+        <p class="text-sm text-gray-500 mt-2">Commercial power solutions.</p>
+        <div class="overlay">Open Brochure</div>
+      </div>
+
+      <!-- add any other existing brands here -->
     </div>
   </div>
 </section>
+
+<!-- removed duplicate brands section (brands merged into 'Our Supply Brands' above) -->
 
 <!-- INDUSTRIES -->
 <section id="industries" class="py-12">
   <div class="container">
-    <h2 class="text-3xl font-semibold text-center text-blue-700 mb-8">Industries We Serve</h2>
+  <h2 class="text-3xl font-semibold text-center text-blue-700 mb-8">Categories We Supply</h2>
     <p class="text-center text-gray-600 mb-6">Power solutions for a wide range of installations — residential to heavy industry.</p>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
@@ -246,7 +281,7 @@
       <ul class="list-disc list-inside text-gray-700">
         <li>Authorized multi-brand supplier</li>
         <li>State-wide delivery & support</li>
-        <li>Experienced technical team</li>
+  <li>Comprehensive warranty &amp; support</li>
       </ul>
     </div>
     <div class="md:col-span-2">
@@ -267,7 +302,8 @@
       <div class="bg-white p-6 rounded-lg shadow">
         <p class="font-semibold">Office</p>
         <p class="text-gray-700 mt-2"><strong>GSTIN:</strong> 33AYOPJ0476F1ZG</p>
-        <p class="text-gray-700 mt-2"><strong>Address:</strong><br>14/2/1, Nagaractchi Nagar, Solar Pudur, Karur Main Road, Erode - 638 002.</p>
+  <p class="text-gray-700 mt-2"><strong>Address:</strong><br>14/2/1, Nagaractchi Nagar, Solar Pudur, Karur Main Road, Erode - 638 002.</p>
+  <p class="text-gray-700 mt-2"><strong>Landmark:</strong> Near Solar Bus Stand, Erode.</p>
 
         <!-- Prominent phone & email so they're easy to tap on mobile -->
         <div class="mt-4">
@@ -347,21 +383,30 @@
   </div>
 </div>
 
-  <!-- Floating WhatsApp contact (desktop: large bar, mobile: small circle) -->
-  <!-- Desktop large bar (hidden on small screens) -->
-  <a href="https://wa.me/918344776630" target="_blank" aria-label="Chat on WhatsApp"
-     class="hidden md:flex fixed right-4 bottom-20 z-50 items-center gap-3 bg-green-600 text-white px-4 py-3 rounded-full shadow-lg">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.9 11.9 0 0012.06.5C6.06.5 1.01 5.55 1.01 11.55c0 2.03.56 4.02 1.62 5.77L.03 23.5l6.47-1.7a11.45 11.45 0 005.56 1.44h.02c6 0 10.05-5.05 10.05-11.05 0-2.96-1.15-5.73-3.61-7.71zM12.06 20.5h-.01"/></svg>
-    <div class="text-left">
-      <div class="text-sm font-semibold">Chat on WhatsApp</div>
-      <div class="text-xs">+91 83447 76630</div>
-    </div>
-  </a>
+      <!-- Floating WhatsApp contact (desktop: large bar, mobile: small circle) -->
+      <!-- Desktop large bar (hidden on small screens) -->
+    <a href="https://wa.me/918344776630" target="_blank" aria-label="Chat on WhatsApp"
+   style="position:fixed; right:16px; bottom:12px; z-index:99999;"
+   class="hidden md:flex items-center gap-3 bg-green-600 text-white px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-all">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20.52 3.48A11.9 11.9 0 0012.06.5C6.06.5 1.01 5.55 1.01 11.55c0 2.03.56 4.02 1.62 5.77L.03 23.5l6.47-1.7a11.45 11.45 0 005.56 1.44h.02c6 0 10.05-5.05 10.05-11.05 0-2.96-1.15-5.73-3.61-7.71zM12.06 20.5h-.01"/>
+  </svg>
+  <div class="text-left leading-tight">
+    <div class="text-sm font-semibold">Chat on WhatsApp</div>
+    <div class="text-xs">+91 83447 76630</div>
+  </div>
+</a>
+
+
+
+
+
+
   
 
-  <!-- Mobile small circular icon (visible only on small screens) -->
+      <!-- Mobile small circular icon (visible only on small screens) -->
   <!-- <a href="https://wa.me/918344776630" target="_blank" aria-label="Chat on WhatsApp"
-     class="md:hidden fixed right-4 bottom-6 z-50 flex items-center justify-center w-14 h-14 bg-green-600 text-white rounded-full shadow-lg">
+        class="md:hidden fixed right-4 bottom-6 z-50 flex items-center justify-center w-14 h-14 bg-green-600 text-white rounded-full shadow-lg">
   <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.9 11.9 0 0012.06.5C6.06.5 1.01 5.55 1.01 11.55c0 2.03.56 4.02 1.62 5.77L.03 23.5l6.47-1.7a11.45 11.45 0 005.56 1.44h.02c6 0 10.05-5.05 10.05-11.05 0-2.96-1.15-5.73-3.61-7.71zM12.06 20.5h-.01"/></svg>
   </a> -->
 
@@ -402,6 +447,20 @@
   modal?.addEventListener('click', (e) => {
     if (e.target === modal) closeModal();
   });
+
+  // Header scroll: switch to solid background after scrolling past threshold
+  (function () {
+    const header = document.querySelector('header');
+    if (!header) return;
+    const threshold = 20; // px before header becomes solid
+    function updateHeader() {
+      if (window.scrollY > threshold) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    }
+    // init and listen
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+  })();
 </script>
 
 </body>
