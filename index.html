@@ -89,15 +89,16 @@ body, html {
   </div>
 
   <!-- Mobile Nav -->
-  <div id="mobile-nav" class="md:hidden hidden bg-[#E6E9EE] text-black border-t border-gray-300">
-    <div class="p-4 flex flex-col space-y-2">
-      <a href="#home" class="hover:text-yellow-400">Home</a>
-      <a href="#about" class="hover:text-yellow-400">About</a>
-      <a href="#products" class="hover:text-yellow-400">Products</a>
-  <a href="#industries" class="hover:text-yellow-400">Categories</a>
-      <a href="#contact" class="hover:text-yellow-400">Contact</a>
-    </div>
+<div id="mobile-nav" class="md:hidden hidden bg-[#111827]/95 text-white border-t border-gray-700 backdrop-blur-md">
+  <div class="p-4 flex flex-col space-y-3">
+    <a href="#home" class="hover:text-yellow-400">Home</a>
+    <a href="#about" class="hover:text-yellow-400">About</a>
+    <a href="#products" class="hover:text-yellow-400">Products</a>
+    <a href="#industries" class="hover:text-yellow-400">Categories</a>
+    <a href="#contact" class="hover:text-yellow-400">Contact</a>
   </div>
+</div>
+
 </header>
 
 <main class="pt-24">
@@ -159,11 +160,11 @@ body, html {
         <div class="overlay">Open Brochure</div>
       </div>
 
-      <!-- Volvo Eicher (image should be named volvoeicher.png in assets/images) -->
-      <div class="brand-card bg-white rounded-xl p-6 flex flex-col items-center shadow" data-brochure="assets/downloads/JK ENTERPRISES.pdf">
+      <!-- Volvo Eicher -->
+      <div class="brand-card bg-white rounded-xl p-6 flex flex-col items-center shadow" data-brochure="assets/downloads/VolvoEicher DPK VECV CPCB IV_Brochure.pdf">
         <img src="assets/images/volvoeicher.png" alt="Volvo Eicher" class="h-20 mb-4">
         <h4 class="font-semibold">Volvo Eicher</h4>
-        <p class="text-sm text-gray-500 mt-2">Efficient power systems.</p>
+        <p class="text-sm text-gray-500 mt-2">DPK CPCB4 Gensets</p>
         <div class="overlay">Open Brochure</div>
       </div>
 
@@ -183,11 +184,11 @@ body, html {
         <div class="overlay">Open Brochure</div>
       </div>
 
-      <!-- Sterling (new) -->
-      <div class="brand-card bg-white rounded-xl p-6 flex flex-col items-center shadow" data-brochure="assets/downloads/JK ENTERPRISES.pdf">
+      <!-- Sterling -->
+      <div class="brand-card bg-white rounded-xl p-6 flex flex-col items-center shadow" data-brochure="assets/downloads/Sterling SGB 500 PRIV-LS-R1_brochure.pdf">
         <img src="assets/images/Sterling.png" alt="Sterling" class="h-20 mb-4">
         <h4 class="font-semibold">Sterling</h4>
-        <p class="text-sm text-gray-500 mt-2">Commercial power solutions.</p>
+        <p class="text-sm text-gray-500 mt-2">SGB 500 PR-IV</p>
         <div class="overlay">Open Brochure</div>
       </div>
 
@@ -205,39 +206,16 @@ body, html {
     <p class="text-center text-gray-600 mb-6">Power solutions for a wide range of installations — residential to heavy industry.</p>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
-      <!-- Ensure these image files exist in assets/images. Replaced with actual filenames found in the folder -->
+      <!-- 1. PetrolBunk -->
       <div class="bg-white rounded-xl overflow-hidden shadow">
-        <img src="assets/images/Apartments.jpeg" alt="Apartment" class="w-full h-44 md:h-56 object-cover">
+        <img src="assets/images/PetrolBunk.jpeg" alt="PetrolBunk" class="w-full h-44 md:h-56 object-cover">
         <div class="p-4 text-center">
-          <h4 class="font-semibold">Apartment</h4>
-          <p class="text-sm text-gray-500 mt-2">Backup power for multi-storey residential buildings and gated communities.</p>
+          <h4 class="font-semibold">Petrol Bunk</h4>
+          <p class="text-sm text-gray-500 mt-2">Safe, consistent power for fuel stations and forecourts.</p>
         </div>
       </div>
 
-      <div class="bg-white rounded-xl overflow-hidden shadow">
-        <img src="assets/images/Hotel.jpeg" alt="Hotel" class="w-full h-44 md:h-56 object-cover">
-        <div class="p-4 text-center">
-          <h4 class="font-semibold">Hotel</h4>
-          <p class="text-sm text-gray-500 mt-2">Power systems for guest rooms, kitchens and common areas with silent-operation options.</p>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-xl overflow-hidden shadow">
-        <img src="assets/images/Resort.jpeg" alt="Resort" class="w-full h-44 md:h-56 object-cover">
-        <div class="p-4 text-center">
-          <h4 class="font-semibold">Resort</h4>
-          <p class="text-sm text-gray-500 mt-2">Vacation properties and leisure installations.</p>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-xl overflow-hidden shadow">
-        <img src="assets/images/Industrial Unit.jpeg" alt="Industrial Unit" class="w-full h-44 md:h-56 object-cover">
-        <div class="p-4 text-center">
-          <h4 class="font-semibold">Industrial Unit</h4>
-          <p class="text-sm text-gray-500 mt-2">Heavy-duty gensets for factories and workshops.</p>
-        </div>
-      </div>
-
+      <!-- 2. Hospital -->
       <div class="bg-white rounded-xl overflow-hidden shadow">
         <img src="assets/images/Hospital.jpeg" alt="Hospital" class="w-full h-44 md:h-56 object-cover">
         <div class="p-4 text-center">
@@ -246,30 +224,96 @@ body, html {
         </div>
       </div>
 
+      <!-- 3. Hotel -->
       <div class="bg-white rounded-xl overflow-hidden shadow">
-        <img src="assets/images/Manufacturing Plant.jpeg" alt="Manufacturing Unit" class="w-full h-44 md:h-56 object-cover">
+        <img src="assets/images/Hotel.jpeg" alt="Hotel" class="w-full h-44 md:h-56 object-cover">
         <div class="p-4 text-center">
-          <h4 class="font-semibold">Manufacturing Unit</h4>
-          <p class="text-sm text-gray-500 mt-2">Production-line solutions and redundancy systems.</p>
+          <h4 class="font-semibold">Hotel</h4>
+          <p class="text-sm text-gray-500 mt-2">Power systems for guest rooms, kitchens and common areas.</p>
         </div>
       </div>
 
+      <!-- 4. Apartment -->
       <div class="bg-white rounded-xl overflow-hidden shadow">
-        <img src="assets/images/Restaurant.jpeg" alt="Restaurant" class="w-full h-44 md:h-56 object-cover">
+        <img src="assets/images/Apartment.jpeg" alt="Apartment" class="w-full h-44 md:h-56 object-cover">
+        <div class="p-4 text-center">
+          <h4 class="font-semibold">Apartment</h4>
+          <p class="text-sm text-gray-500 mt-2">Backup power for multi-storey residential buildings and gated communities.</p>
+        </div>
+      </div>
+
+      <!-- 5. Resturant -->
+      <div class="bg-white rounded-xl overflow-hidden shadow">
+        <img src="assets/images/Resturant.jpeg" alt="Resturant" class="w-full h-44 md:h-56 object-cover">
         <div class="p-4 text-center">
           <h4 class="font-semibold">Restaurant</h4>
           <p class="text-sm text-gray-500 mt-2">Commercial kitchens and hospitality back-of-house power.</p>
         </div>
       </div>
 
+      <!-- 6. Commercialbuilding -->
       <div class="bg-white rounded-xl overflow-hidden shadow">
-        <img src="assets/images/PetrolBunk.jpeg" alt="Petrol Bunk" class="w-full h-44 md:h-56 object-cover">
+        <img src="assets/images/Commercialbuilding.jpeg" alt="Commercialbuilding" class="w-full h-44 md:h-56 object-cover">
         <div class="p-4 text-center">
-          <h4 class="font-semibold">Petrol Bunk</h4>
-          <p class="text-sm text-gray-500 mt-2">Safe, consistent power for fuel stations and forecourts.</p>
+          <h4 class="font-semibold">Commercial Building</h4>
+          <p class="text-sm text-gray-500 mt-2">Office blocks, malls and mixed-use buildings.</p>
         </div>
       </div>
-    </div>    
+
+      <!-- 7. IndustrialBuilding -->
+      <div class="bg-white rounded-xl overflow-hidden shadow">
+        <img src="assets/images/IndustrialBuilding.jpeg" alt="IndustrialBuilding" class="w-full h-44 md:h-56 object-cover">
+        <div class="p-4 text-center">
+          <h4 class="font-semibold">Industrial Building</h4>
+          <p class="text-sm text-gray-500 mt-2">Heavy-duty gensets for factories and large workshops.</p>
+        </div>
+      </div>
+
+      <!-- 8. Manufacturingunit -->
+      <div class="bg-white rounded-xl overflow-hidden shadow">
+        <img src="assets/images/Manufacturingunit.jpeg" alt="Manufacturingunit" class="w-full h-44 md:h-56 object-cover">
+        <div class="p-4 text-center">
+          <h4 class="font-semibold">Manufacturing Unit</h4>
+          <p class="text-sm text-gray-500 mt-2">Production-line solutions and redundancy systems.</p>
+        </div>
+      </div>
+
+      <!-- 9. Resort -->
+      <div class="bg-white rounded-xl overflow-hidden shadow">
+        <img src="assets/images/Resort.jpeg" alt="Resort" class="w-full h-44 md:h-56 object-cover">
+        <div class="p-4 text-center">
+          <h4 class="font-semibold">Resort</h4>
+          <p class="text-sm text-gray-500 mt-2">Vacation properties and leisure installations.</p>
+        </div>
+      </div>
+
+      <!-- 10. MarriageHall -->
+      <div class="bg-white rounded-xl overflow-hidden shadow">
+        <img src="assets/images/MarriageHall.jpeg" alt="MarriageHall" class="w-full h-44 md:h-56 object-cover">
+        <div class="p-4 text-center">
+          <h4 class="font-semibold">Marriage Hall</h4>
+          <p class="text-sm text-gray-500 mt-2">Reliable power for event venues and large gatherings.</p>
+        </div>
+      </div>
+
+      <!-- 11. ConstructionContractor -->
+      <div class="bg-white rounded-xl overflow-hidden shadow">
+        <img src="assets/images/ConstructionContractor.jpeg" alt="ConstructionContractor" class="w-full h-44 md:h-56 object-cover">
+        <div class="p-4 text-center">
+          <h4 class="font-semibold">Construction Contractor</h4>
+          <p class="text-sm text-gray-500 mt-2">Temporary and mobile power solutions for sites.</p>
+        </div>
+      </div>
+
+      <!-- 12. Privateprojects -->
+      <div class="bg-white rounded-xl overflow-hidden shadow">
+        <img src="assets/images/Privateprojects.jpeg" alt="Privateprojects" class="w-full h-44 md:h-56 object-cover">
+        <div class="p-4 text-center">
+          <h4 class="font-semibold">Private Projects</h4>
+          <p class="text-sm text-gray-500 mt-2">Custom installations and bespoke power systems for private clients.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -286,7 +330,7 @@ body, html {
     </div>
     <div class="md:col-span-2">
       <div class="w-full h-64 md:h-80 overflow-hidden rounded-lg shadow">
-        <img src="assets/images/Installation.jpeg" alt="Installation" class="w-full h-full object-cover block">
+  <img src="assets/images/Installation.jpeg" alt="Why Choose Us" class="w-full h-full object-cover block">
       </div>
     </div>
   </div>
