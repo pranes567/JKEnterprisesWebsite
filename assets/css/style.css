@@ -24,7 +24,7 @@ body {
   padding-right: 1rem;
 }
 
-/* Brand and header tweaks */
+/* Brand / header tweaks */
 .brand {
   color: #1e40af; /* Tailwind: blue-800 */
   font-weight: 700;
@@ -32,6 +32,21 @@ body {
 
 .header-shadow {
   box-shadow: 0 2px 8px rgba(2, 6, 23, 0.08);
+}
+
+/* Fixed header behaviour */
+header {
+  position: relative;
+  z-index: 100;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+  background-color: #EAE8E4 !important;
+}
+
+header.scrolled {
+  background-color: #EAE8E4 !important;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+  border-bottom-color: rgba(0, 0, 0, 0.06) !important;
+  backdrop-filter: none !important;
 }
 
 /* ---------- UI Components ---------- */
@@ -45,6 +60,7 @@ body {
 .card-hover {
   transition: all 0.3s ease;
 }
+
 .card-hover:hover {
   transform: translateY(-6px);
 }
@@ -57,94 +73,183 @@ body {
 /* ---------- Animations ---------- */
 @keyframes pulse {
   0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.1); }
+  50%      { opacity: 0.6; transform: scale(1.1); }
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
+  50%      { transform: translateY(-6px); }
 }
 
-/* Apply float animation only to hero heading */
-.hero h1 {
+/* Apply float animation to hero heading */
+.hero-section h1 {
   animation: float 5s ease-in-out infinite;
 }
 
-@keyframes shine {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(50%); }
-}
-
-/* ---------- Hero Section ---------- */
-.hero {
+/* ---------- HERO SECTION (FINAL) ---------- */
+.hero-section {
   position: relative;
-  height: 90vh;
-  color: white;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 6%;
+  padding-right: 6%;
   overflow: hidden;
+
+  background:
+    radial-gradient(circle at 5% 5%, rgba(255, 255, 255, 0.06) 0, transparent 50%),
+    radial-gradient(circle at 80% 10%, rgba(148, 163, 184, 0.15) 0, transparent 55%),
+    url("../images/AshokLeyland_HeroSectionImage.png?v=2") no-repeat 35% center;
+  background-size: 110%;
+  background-attachment: scroll;
 }
 
-/* Background Image Enhancements */
-.hero > .bg-fixed {
-  background-attachment: fixed;
-  will-change: transform;
-  filter: brightness(0.95);
-  transition: filter 0.3s ease;
-}
-
-/* Optional hover brightness effect */
-.hero:hover .bg-fixed {
-  filter: brightness(1.25) contrast(1.1);
-}
-
-/* Metallic gradient overlay (optional if HTML overlay is used)
-   Uncomment if you want an additional global gradient layer */
-/*
-.hero::before {
-  content: "";
+/* Dark overlay for clean text visibility */
+.hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to right,
-    rgba(30, 58, 138, 0.8),
-    rgba(37, 99, 235, 0.65),
-    rgba(96, 165, 250, 0.5)
+    90deg,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.75) 35%,
+    rgba(0, 0, 0, 0.45) 65%,
+    rgba(0, 0, 0, 0.15) 100%
   );
   z-index: 1;
 }
-*/
 
-/* Hero text wrapper */
+/* Text container */
 .hero-content {
   position: relative;
   z-index: 2;
-  text-align: center;
-  padding: 2rem;
+  max-width: 500px;
+  color: #ffffff;
+  width: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 0;
 }
 
-/* ---------- Responsive Adjustments ---------- */
+/* Heading */
+.hero-content h1 {
+  font-size: clamp(2.4rem, 4.5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.18;
+  margin-bottom: 1.1rem;
+}
+
+.hero-content .highlight {
+  color: #facc15; /* yellow */
+}
+
+/* Subtitle */
+.hero-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e5e7eb;
+  margin-bottom: 1.75rem;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.9rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.98rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+              background-color 0.15s ease, color 0.15s ease,
+              border-color 0.15s ease;
+}
+
+.btn-primary {
+  background: #facc15;
+  color: #1e293b;
+  box-shadow: 0 12px 30px rgba(250, 204, 21, 0.35);
+}
+
+.btn-primary:hover {
+  background: #fde047;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 36px rgba(250, 204, 21, 0.45);
+}
+
+.btn-secondary {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  background: transparent;
+}
+
+.btn-secondary:hover {
+  background: #ffffff;
+  color: #1e293b;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.45);
+}
+
+/* ---------- RESPONSIVE ADJUSTMENTS ---------- */
+@media (max-width: 1024px) {
+  .hero-section {
+    background-position: 35% center;
+    background-size: 115%;
+  }
+}
+
 @media (max-width: 768px) {
-  .hero {
-    height: 70vh;
+  .hero-section {
+    height: 100vh;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-position: 35% center;
+    background-size: 120%;
   }
 
-  .hero h1 {
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
     font-size: 2.2rem;
   }
 
-  .hero p {
+  .hero-content p {
     font-size: 1rem;
   }
 
-  .hero a {
-    font-size: 0.95rem;
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
   }
 }
 
-header {
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-header.scrolled {
-  background-color: rgba(15, 23, 42, 0.9); /* solid navy when scrolled */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+@media (max-width: 480px) {
+  .hero-section {
+    height: 100vh;
+    background-size: 130%;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
 }
 
+/* ===== FINAL FIX: Contact section hidden under header ===== */
+#contact {
+  scroll-margin-top: 95px;
+  padding-top: 10px;
+}
