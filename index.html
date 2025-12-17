@@ -13,23 +13,22 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="JK Enterprises - Multi-brand Generator Supplier">
   <meta property="og:description" content="Reliable generator sales, installation, and service for Tamil Nadu, Kerala & Karnataka. Brands: Genlite, Mahindra, Sterling, Eicher, Volvo.">
-  <meta property="og:url" content="https://jkenterpriseserode.com/">
-  <meta property="og:image" content="https://jkenterpriseserode.com/assets/images/jk-logo.png">
+  <meta property="og:url" content="https://jkenterpriseerode.com/">
+  <meta property="og:image" content="https://jkenterpriseerode.com/assets/images/jk-logo1.png">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="JK Enterprises - Multi-brand Generator Supplier">
   <meta name="twitter:description" content="Reliable generator sales, installation, and service for Tamil Nadu, Kerala & Karnataka. Brands: Genlite, Mahindra, Sterling, Eicher, Volvo.">
-  <meta name="twitter:image" content="https://jkenterpriseserode.com/assets/images/jk-logo.png">
+  <meta name="twitter:image" content="https://jkenterpriseerode.com/assets/images/jk-logo1.png">
   <!-- Canonical -->
-  <link rel="canonical" href="https://jkenterpriseserode.com/">
+  <link rel="canonical" href="https://jkenterpriseerode.com/">
   <!-- Preload logo for performance -->
-  <link rel="preload" as="image" href="assets/images/jk-logo.png">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preload" as="image" href="assets/images/jk-logo1.png">  
   <!-- use a locally-built Tailwind CSS in production -->
   <link rel="stylesheet" href="assets/css/tailwind.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- favicon -->
-  <link rel="icon" href="assets/images/jk-logo.png" type="image/png">
+  <link rel="icon" href="assets/images/jk-logo1.png" type="image/png">
   <style>
     /* enable smooth single-page scrolling */
     html { scroll-behavior: smooth; }
@@ -76,8 +75,7 @@ body, html {
   overflow-x: hidden;
 }
 </style>
-  <!-- favicon -->
-  <link rel="icon" href="assets/images/jk-logo.png" type="image/png">
+ 
 </head>
 <body class="bg-gray-50 text-gray-900">
 
@@ -88,7 +86,7 @@ body, html {
     <!-- Logo + Company Name (left aligned) -->
     <div class="flex items-center gap-4">
       <a href="#home" class="flex items-center gap-4">
-        <img src="assets/images/jk-logo.png" alt="JK Enterprises company logo - multi-brand generator supplier" class="h-20 md:h-24 w-auto object-contain block" />
+        <img src="assets/images/jk-logo1.png" alt="JK Enterprises company logo - multi-brand generator supplier" class="h-20 md:h-24 w-auto object-contain block" />
         <div>
           <span class="text-2xl md:text-3xl font-semibold text-black tracking-wide">JK ENTERPRISES</span>
         </div>
@@ -111,13 +109,15 @@ body, html {
   </div>
 
   <!-- Mobile Nav -->
-<div id="mobile-nav" class="md:hidden hidden bg-[#111827]/95 text-white border-t border-gray-700 backdrop-blur-md">
+<div id="mobile-nav"
+     class="md:hidden hidden fixed top-24 left-0 right-0 z-50
+            backdrop-blur-md border-t border-gray-700">
   <div class="p-4 flex flex-col space-y-3">
-    <a href="#home" class="hover:text-yellow-400">Home</a>
-    <a href="#about" class="hover:text-yellow-400">About</a>
-    <a href="#products" class="hover:text-yellow-400">Products</a>
-    <a href="#industries" class="hover:text-yellow-400">Categories</a>
-    <a href="#contact" class="hover:text-yellow-400">Contact</a>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#industries">Categories</a>
+    <a href="#contact">Contact</a>
   </div>
 </div>
 
@@ -427,13 +427,13 @@ body, html {
         <p class="text-gray-700 mt-2"><strong>GSTIN:</strong> 33AYOPJ0476F1ZG</p>
   <p class="text-gray-700 mt-2"><strong>Address:</strong><br>14/2/1,Nagaratchi Nagar,<br>
     Karur Main Road,<br>
-    Solar, Erode.<br>
+    Solar Erode,<br>
     Tamil Nadu - 638 002.</p>
-  <p class="text-gray-700 mt-2"><strong>Landmark:</strong> Near Solar Bus Stand.</p>
+  <p class="text-gray-700 mt-2"><strong>Landmark:</strong> Near Solar Bus Stand, Erode.</p>
 
         <!-- Prominent phone & email so they're easy to tap on mobile -->
         <div class="mt-4">
-          <a href="tel:+918344776630" class="inline-block text-blue-800 font-semibold text-lg md:text-xl">+91 83447 76630</a>
+          <a href="tel:+918344776630" class="inline-block text-blue-800 font-semibold text-lg md:text-xl">+91 83 44 77 66 30</a>
           <div class="text-sm text-gray-600">Call us for quotes & service</div>
         </div>
 
@@ -519,16 +519,9 @@ body, html {
   </svg>
   <div class="text-left leading-tight">
     <div class="text-sm font-semibold">Chat on WhatsApp</div>
-    <div class="text-xs">+91 83447 76630</div>
+    <div class="text-xs">+91 83 44 77 66 30</div>
   </div>
 </a>
-
-
-
-
-
-
-  
 
       <!-- Mobile small circular icon (visible only on small screens) -->
   <!-- <a href="https://wa.me/918344776630" target="_blank" aria-label="Chat on WhatsApp"
@@ -587,6 +580,13 @@ body, html {
     updateHeader();
     window.addEventListener('scroll', updateHeader, { passive: true });
   })();
+
+  const mobileNav = document.getElementById('mobile-nav');
+  mobileNav?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.add('hidden');
+    });
+  });
 </script>
 
 </body>

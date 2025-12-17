@@ -253,3 +253,39 @@ header.scrolled {
   scroll-margin-top: 95px;
   padding-top: 10px;
 }
+
+/* ===============================
+   MOBILE NAV FINAL VISIBILITY FIX
+   =============================== */
+
+/* Default (menu over hero / dark background) */
+#mobile-nav a {
+  color: #ffffff !important;
+}
+
+/* Hover / active */
+#mobile-nav a:hover {
+  color: #facc15 !important;
+}
+
+
+/* ===============================
+   MOBILE NAV – FINAL LOCKED STYLE
+   =============================== */
+
+#mobile-nav {
+  background-color: rgba(17, 24, 39, 0.97) !important; /* slate-900 */
+  color: #ffffff !important;
+}
+
+/* Links always visible */
+#mobile-nav a {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+/* Hover */
+#mobile-nav a:hover {
+  color: #facc15 !important;
+}
+
