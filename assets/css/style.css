@@ -289,3 +289,33 @@ header.scrolled {
   color: #facc15 !important;
 }
 
+/* ===== FORCE MOBILE NAV TO RIGHT SIDE ===== */
+#mobile-nav {
+  left: auto !important;
+  right: 0 !important;
+  transform: translateX(100%);
+}
+
+/* When visible */
+#mobile-nav:not(.hidden) {
+  transform: translateX(0);
+}
+
+/* ===== MOBILE NAV POLISH (OPTIONAL) ===== */
+
+/* Mobile nav background transparency */
+#mobile-nav {
+  background-color: rgba(17, 24, 39, 0.88); /* dark + slightly transparent */
+}
+
+
+/* 1. Depth shadow */
+#mobile-nav {
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.35);
+}
+
+/* 2. Smooth slide animation */
+#mobile-nav {
+  transition: transform 0.3s ease-in-out;
+}
+
